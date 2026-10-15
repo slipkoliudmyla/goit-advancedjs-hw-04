@@ -66,7 +66,8 @@ img {
   border-color: #000000;
 }
 
-.form button {
+.form button,
+.load-more {
   padding: 8px 16px;
   font: inherit;
   font-weight: 500;
@@ -80,7 +81,9 @@ img {
 }
 
 .form button:hover,
-.form button:focus {
+.form button:focus,
+.load-more:hover,
+.load-more:focus {
   background-color: #6c8cff;
 }
 
@@ -96,7 +99,9 @@ img {
   width: 360px;
   border: 1px solid #808080;
   overflow: hidden;
-  transition: transform 250ms ease, box-shadow 250ms ease;
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
 }
 
 .gallery-item:hover {
@@ -137,4 +142,51 @@ img {
 body .sl-overlay {
   background: #2e2f42;
   opacity: 0.8;
+}
+
+.load-more {
+  display: none;
+  margin-top: 32px;
+}
+
+.load-more.is-visible {
+  display: inline-block;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .form label {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .form input {
+    width: 100%;
+  }
+
+  .gallery-item {
+    width: 100%;
+  }
 }

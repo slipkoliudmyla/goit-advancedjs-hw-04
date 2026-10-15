@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,6 +14,7 @@
           <input
             type="text"
             name="search-text"
+            aria-label="Search images"
             placeholder="Search images..."
             required
           />
@@ -21,9 +22,12 @@
         <button type="submit">Search</button>
       </form>
 
-      <span class="loader is-hidden" aria-label="Loading"></span>
-
       <ul class="gallery"></ul>
+
+      <button type="button" class="load-more">Load more</button>
+      <span class="loader" role="status">
+        <span class="visually-hidden">Loading images...</span>
+      </span>
     </main>
 
     <script type="module" src="./main.js"></script>
